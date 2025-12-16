@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Refleksi Pembelajaran</title>
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      background: #f7f9fc;
+      padding: 20px;
+    }
+    .refleksi-box {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(110, 193, 228, 0.2);
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      margin-top: 0;
+      color: #2d2d2d;
+    }
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      border-radius: 8px;
+      border: 1px solid #cfe8ff;
+      padding: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #6ec1e4;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 16px;
+      padding: 12px;
+      background: #effaf1;
+      border-radius: 8px;
+      border: 1px solid #cfe9d4;
+    }
+    .thanks {
+      margin-top: 12px;
+      font-weight: bold;
+      color: #2d6a4f;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="refleksi-box">
+  <h2>Refleksi Pertemuan</h2>
+  <p>Tuliskan hal yang kamu pelajari hari ini, kesulitan yang kamu temui, atau hal yang menarik.</p>
+  <textarea id="refleksiInput" placeholder="Tuliskan refleksi kamu di sini..."></textarea>
+  <button onclick="simpanRefleksi()">Simpan Refleksi</button>
+  <div class="output" id="outputBox" style="display:none"></div>
+  <div class="thanks" id="thanksBox" style="display:none">✨ Terima kasih atas refleksimu! ✨</div>
+</div>
+
+<script>
+  function simpanRefleksi() {
+    const teks = document.getElementById('refleksiInput').value.trim();
+    const output = document.getElementById('outputBox');
+    const thanks = document.getElementById('thanksBox');
+    if(teks){
+      output.style.display = 'block';
+      output.textContent = "Refleksi kamu: " + teks;
+      thanks.style.display = 'block'; // tampilkan ucapan terima kasih
+    } else {
+      alert("Silakan isi refleksi terlebih dahulu.");
+    }
+  }
+</script>
+
+</body>
+</html>
